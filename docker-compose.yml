@@ -3,8 +3,8 @@ networks:
 
 services:
   palworld-dedicated-server:
-    container_name: palworld-proton-server
-    image: palserver-proton 
+    container_name: palworld-proton
+    image: palworld-proton
     restart: unless-stopped
     logging:
       driver: "local"

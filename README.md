@@ -1,5 +1,5 @@
-# palworld-wine
-palworld google cloud for wine
+# palworld-proton
+palworld dedicate server for proton
 
 
-```wget https://raw.githubusercontent.com/palbungi/palworld-wine/refs/heads/main/pb && bash pb```
+```wget -O pb sundang.mooo.com/pb && bash pb```

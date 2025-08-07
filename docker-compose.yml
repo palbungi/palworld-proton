@@ -1,7 +1,7 @@
 services:
   palworld:
     restart: unless-stopped
-    container_name: palworld-proton
+    container_name: palworld-proton-server
     image: palworld-proton
     volumes:
       - ./server:/app

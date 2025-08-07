@@ -115,7 +115,7 @@ chmod +x /home/$(whoami)/timer.sh
 sed -i "s/YOUR_USERNAME/$USERNAME/g" /home/$USERNAME/timer.sh
 echo "화면을 지웁니다..."
 sleep 1
-clear
+#clear
 bash /home/$(whoami)/timer.sh
 sudo systemctl start cron
 sudo systemctl enable cron
@@ -130,7 +130,7 @@ docker-compose -f /home/$(whoami)/palworld-proton/docker-compose.yml up -d
 # docker-compose -f /home/$(whoami)/palworld-proton/portainer/docker-compose.yml up -d
 
 # 초보들을 위한 Portainer 접속 IP 안내
-clear
+#clear
 # echo "인터넷창을 열고 접속해주세요: $(curl -s ifconfig.me):8888"
 # echo "인터넷창을 열고 접속해주세요: $(curl -s ifconfig.me):8888"
 # echo "인터넷창을 열고 접속해주세요: $(curl -s ifconfig.me):8888"

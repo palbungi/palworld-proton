@@ -3,21 +3,16 @@ FROM cm2network/steamcmd:root
 RUN apt-get update && apt-get install -y gosu cron wget python3 libfreetype6
 
 ARG APPID=2394010
-ARG USER=steam
 
-ENV USER=${USER}
 ENV STEAM_HOME="/home/${USER}" \
     STEAM_USER="${USER}" \
     STEAM_PATH="/home/${USER}/.steam/steam" \
     APPID=$APPID
 
-RUN mkdir -p ${STEAM_PATH} /app/PalServer
-
-# 권한을 1001:1002로 설정
-RUN chown -R 1001:1002 ${STEAM_PATH} /app/PalServer
-
+RUN mkdir -p ${STEAM_PATH}
 WORKDIR ${STEAM_PATH}
 
+# Install Proton build from Glorious Eggroll
 ENV PROTON_VERSION=GE-Proton10-10
 
 RUN mkdir -p compatibilitytools.d/
@@ -28,10 +23,13 @@ RUN mkdir -p steamapps/compatdata/${APPID}
 RUN cp -r compatibilitytools.d/${PROTON_VERSION}/files/share/default_pfx steamapps/compatdata/${APPID}
 RUN mkdir -p .config/protonfixes
 
+RUN chown -R ${USER}:${USER} ${STEAM_HOME}
+
 # Export Proton paths
 ENV STEAM_COMPAT_CLIENT_INSTALL_PATH=$STEAM_PATH
 ENV STEAM_COMPAT_DATA_PATH=${STEAM_PATH}/steamapps/compatdata/${APPID}
 ENV PROTON=${STEAM_PATH}/compatibilitytools.d/${PROTON_VERSION}/proton
+
 
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh

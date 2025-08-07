@@ -4,9 +4,9 @@ RUN apt-get update && apt-get install -y gosu cron wget python3 libfreetype6
 
 ARG APPID=2394010
 
-ENV STEAM_HOME="/home/${USER}" \
-    STEAM_USER="${USER}" \
-    STEAM_PATH="/home/${USER}/.steam/steam" \
+ENV STEAM_HOME="/home/steam" \
+    STEAM_USER="steam" \
+    STEAM_PATH="/home/steam/.steam/steam"
     APPID=$APPID
 
 RUN mkdir -p ${STEAM_PATH}

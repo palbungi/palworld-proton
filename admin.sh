@@ -6,7 +6,7 @@ YELLOW='\033[1;33m'
 NC='\033[0m' # 색상 초기화
 
 # Config.json 위치
-JSON_FILE="/home/$(whoami)/palworld-wine/game/Pal/Binaries/Win64/PalDefender/Config.json"
+JSON_FILE="/home/$(whoami)/palworld-proton/server/PalServer/Pal/Binaries/Win64/PalDefender/Config.json"
 
 # jq 설치여부 확인
 if ! command -v jq &> /dev/null; then

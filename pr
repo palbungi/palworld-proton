@@ -34,8 +34,8 @@ mkdir -p /home/$(whoami)/palworld-proton/server/bin
 wget -P /home/$(whoami)/palworld-proton/server/bin https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/server/bin/backup.sh
 wget -P /home/$(whoami)/palworld-proton/server https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/server/bin/crontab
 wget -P /home/$(whoami)/palworld-proton/server https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/server/bin/start.sh
-chmod +r /home/$(whoami)/palworld-proton/server
 bash /home/$(whoami)/palworld-proton/docker https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/docker/build-docker-image.sh
+sudo chmod +r /home/$(whoami)/palworld-proton/server
 wget https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/docker-compose.yml
 wget https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/default.env
 sed -i "s/^PUBLIC_IP=.*/PUBLIC_IP=$(curl -s ifconfig.me)/" default.env

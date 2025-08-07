@@ -7,10 +7,6 @@ die() {
 }
 
 id
-if [ "$(id -u)" != "1000" ];then
-    echo "script must run as steam"
-    die
-fi
 
 steamcmd=${STEAM_HOME}/steamcmd/steamcmd.sh
 
@@ -44,11 +40,6 @@ ARGS="${ARGS} EpicApp=PalServer"
 PalServerDir=/app/PalServer
 
 mkdir -p ${PalServerDir}
-DirPerm=$(stat -c "%u:%g:%a" ${PalServerDir})
-if [ "${DirPerm}" != "1000:1000:755" ];then
-    echo "${PalServerDir} has unexpected permission ${DirPerm} != 1000:1000:755"
-    die
-fi
 
 set -x
 $steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir ${PalServerDir} +login anonymous +app_update ${APPID} validate +quit || die

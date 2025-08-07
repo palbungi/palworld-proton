@@ -10,6 +10,10 @@ ENV STEAM_HOME="/home/steam" \
     APPID=$APPID
 
 RUN mkdir -p ${STEAM_PATH}
+RUN useradd -m -u 1001 steam && \
+    chown -R steam:steam /home/steam
+USER steam
+
 WORKDIR ${STEAM_PATH}
 
 # Install Proton build from Glorious Eggroll

@@ -16,20 +16,24 @@ services:
         max-size: "10m"
         max-file: "3"
     ports:
-      - target: 8211 # Gamerserver port inside of the container
-        published: 8211 # Gamerserver port on your host
+      - target: 8211
+        published: 8211
         protocol: udp
         mode: host
-      - target: 8212 # Gameserver API port inside of the container
-        published: 8212 # Gameserver API port on your host
+      - target: 8212
+        published: 8212
         protocol: tcp
         mode: host
-      - target: 25575 # RCON port inside of the container
-        published: 25575 # RCON port on your host
+      - target: 25575
+        published: 25575
         protocol: tcp
         mode: host
-      - target: 27015 # Query port inside of the container
-        published: 27015 # Query port on your host
+      - target: 27015
+        published: 27015
         protocol: tcp
     networks:
       - palworld
+
+networks:
+  palworld:
+    driver: bridge

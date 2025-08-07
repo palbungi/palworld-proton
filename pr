@@ -45,9 +45,9 @@ USERNAME=$(whoami)
 wget https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/regular_maintenance.sh
 chmod +x /home/$(whoami)/palworld-proton/regular_maintenance.sh
 sed -i "s/YOUR_USERNAME/$USERNAME/g" /home/$USERNAME/palworld-proton/regular_maintenance.sh
-wget -P /home/$(whoami) https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/start.sh
-chmod +x /home/$(whoami)/start.sh
-sed -i "s/YOUR_USERNAME/$USERNAME/g" /home/$USERNAME/start.sh
+wget -P /home/$(whoami) https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/run.sh
+chmod +x /home/$(whoami)/run.sh
+sed -i "s/YOUR_USERNAME/$USERNAME/g" /home/$USERNAME/run.sh
 wget -P /home/$(whoami) https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/restart.sh
 chmod +x /home/$(whoami)/restart.sh
 sed -i "s/YOUR_USERNAME/$USERNAME/g" /home/$USERNAME/restart.sh

@@ -1,6 +1,6 @@
 #!/bin/bash
 CRON_FILE="/tmp/mycron"
-SCRIPT_PATH="/home/YOUR_USERNAME/palworld-wine/regular_maintenance.sh"
+SCRIPT_PATH="/home/YOUR_USERNAME/palworld-proton/regular_maintenance.sh"
 
 # regular_maintenance.sh 유무 확인
 if [ ! -f "$SCRIPT_PATH" ]; then

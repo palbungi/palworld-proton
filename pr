@@ -59,6 +59,7 @@ sed -i "s/YOUR_USERNAME/$USERNAME/g" /home/$USERNAME/stop.sh
 mkdir -p /home/$(whoami)/palworld-proton/server/PalServer/Pal/Saved/Config/WindowsServer
 wget -P /home/$(whoami)/palworld-proton/server/PalServer/Pal/Saved/Config/WindowsServer https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/Engine.ini
 wget -P /home/$(whoami)/palworld-proton/server/PalServer/Pal/Saved/Config/WindowsServer https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/GameUserSettings.ini
+sudo chmod 755 /home/$(whoami)/palworld-proton/server/PalServer
 
 # 차후 서버이동을 위해 서버저장 폴더 미리 생성(nano 화면에서 새 콘솔창으로 서버데이터 업로드)
 mkdir -p /home/$(whoami)/palworld-proton/server/PalServer/Pal/Saved/SaveGames/0/0123456789ABCDEF0123456789ABCDEF

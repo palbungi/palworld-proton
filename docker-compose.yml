@@ -5,7 +5,6 @@ services:
     image: palworld-proton
     volumes:
       - ./server:/app
-      - ./start.sh:/app/start.sh
       - /etc/localtime:/etc/localtime:ro
       - /etc/machine-id:/etc/machine-id:ro    
     env_file:

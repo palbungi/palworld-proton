@@ -7,7 +7,7 @@ services:
       - ./start.sh:/app/start.sh
       - ./server:/app
       - /etc/localtime:/etc/localtime:ro
-      - /etc/machine-id:/etc/machine-id:ro    
+      - /etc/machine-id:/etc/machine-id:ro
     env_file:
       - ./default.env
     logging:

@@ -4,7 +4,6 @@ services:
     container_name: palworld-proton-server
     image: palworld-proton
     volumes:
-      - ./start.sh:/app/start.sh
       - ./server:/app
       - /etc/localtime:/etc/localtime:ro
       - /etc/machine-id:/etc/machine-id:ro

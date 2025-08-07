@@ -7,8 +7,8 @@ SLEEP_BIN="/bin/sleep"
 ECHO_BIN="/usr/bin/echo" # 로깅을 위해 추가
 
 # YAML 파일 및 컨테이너 이름 (절대 경로 명시 권장)
-YAML_FILE="/home/YOUR_USERNAME/palworld-wine/docker-compose.yml" # docker-compose.yml 파일의 실제 절대 경로
-CONTAINER_NAME="palworld-wine-server"
+YAML_FILE="/home/YOUR_USERNAME/palworld-proton/docker-compose.yml" # docker-compose.yml 파일의 실제 절대 경로
+CONTAINER_NAME="palworld-proton-server"
 
 # 시작 메시지
 ${ECHO_BIN} -e "\e[32m5초 후 서버가 재시작 됩니다\e[0m"

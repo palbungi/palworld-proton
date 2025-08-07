@@ -123,7 +123,7 @@ sudo systemctl enable cron
 
 
 # 팰월드 서버 시작
-docker-compose -f /home/$(whoami)/palworld-proton/docker-compose.yml up -d
+docker-compose -f /home/$(whoami)/palworld-proton/docker-compose.yml up
 
 # Portainer 설치 및 실행(웹에서 서버관리) - 삭제 유무 결정중
 # mkdir /home/$(whoami)/palworld-proton/portainer

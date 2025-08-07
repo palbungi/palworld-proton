@@ -36,7 +36,4 @@ ENV PROTON=${STEAM_PATH}/compatibilitytools.d/${PROTON_VERSION}/proton
 COPY docker-entrypoint.sh /docker-entrypoint.sh
 RUN chmod +x /docker-entrypoint.sh
 
-# 컨테이너 실행 사용자 설정
-USER 1001:1002
-
 ENTRYPOINT ["/docker-entrypoint.sh"]

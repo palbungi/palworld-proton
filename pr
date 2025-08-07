@@ -33,8 +33,8 @@ wget -P /home/$(whoami)/palworld-proton/docker https://raw.githubusercontent.com
 chmod +r /home/$(whoami)/palworld-proton/docker
 mkdir -p /home/$(whoami)/palworld-proton/server/bin
 wget -P /home/$(whoami)/palworld-proton/server/bin https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/server/bin/backup.sh
-wget -P /home/$(whoami)/palworld-proton/server https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/server/bin/crontab
-wget -P /home/$(whoami)/palworld-proton/server https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/server/bin/start.sh
+wget -P /home/$(whoami)/palworld-proton/server https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/server/crontab
+wget -P /home/$(whoami)/palworld-proton/server https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/server/start.sh
 bash /home/$(whoami)/palworld-proton/docker https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/docker/build-docker-image.sh
 sudo chmod +r /home/$(whoami)/palworld-proton/server
 wget https://raw.githubusercontent.com/palbungi/palworld-proton/refs/heads/main/docker-compose.yml
@@ -139,4 +139,4 @@ echo "게임서버 접속 아이피: $(curl -s ifconfig.me):8211"
 echo "위 주소들을 메모 해주세요. 게임서버는 최소 5분 후 접속해주세요."
 
 # 설치파일 삭제
-rm pr
+rm /home/$(whoami)/pr

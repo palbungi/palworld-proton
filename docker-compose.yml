@@ -1,11 +1,15 @@
-networks:
-  palworld:
-
 services:
-  palworld-dedicated-server:
-    container_name: palworld-proton
-    image: palworld-proton
+  palworld:
     restart: unless-stopped
+    container_name: palworld
+    image: palserver-proton
+    volumes:
+      - ./server:/app
+      - ./start.sh:/app/start.sh
+      - /etc/localtime:/etc/localtime:ro
+      - /etc/machine-id:/etc/machine-id:ro    
+    env_file:
+      - ./default.env
     logging:
       driver: "local"
       options:
@@ -27,12 +31,5 @@ services:
       - target: 27015 # Query port inside of the container
         published: 27015 # Query port on your host
         protocol: tcp
-    env_file:
-      - ./default.env
-    volumes:
-      - ./server:/app
-      - ./start.sh:/app/start.sh
-      - /etc/localtime:/etc/localtime:ro
-      - /etc/machine-id:/etc/machine-id:ro
     networks:
       - palworld

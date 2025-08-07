@@ -3,12 +3,12 @@ services:
     restart: unless-stopped
     container_name: palworld-proton-server
     image: palworld-proton
+    env_file:
+      - ./default.env
     volumes:
       - ./server:/app
       - /etc/localtime:/etc/localtime:ro
       - /etc/machine-id:/etc/machine-id:ro
-    env_file:
-      - ./default.env
     logging:
       driver: "local"
       options:

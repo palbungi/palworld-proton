@@ -1,10 +1,5 @@
 #!/bin/bash
 
-die() {
-    echo "$0 script failed, hanging forever..."
-    while [ 1 ]; do sleep 10; done
-}
-
 id
 
 steamcmd=${STEAM_HOME}/steamcmd/steamcmd.sh
@@ -41,15 +36,15 @@ else
 fi
 
 set -x
-$steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir ${PalServerDir} +login anonymous +app_update ${APPID} validate +quit || die
+$steamcmd +@sSteamCmdForcePlatformType windows +force_install_dir ${PalServerDir} +login anonymous +app_update ${APPID} validate +quit
 set +x
 
 PalServerExe="${PalServerDir}/Pal/Binaries/Win64/PalServer-Win64-Shipping.exe"
 if [ ! -f ${PalServerExe} ]; then
     echo "${PalServerExe} does not exist"
-    die
+    exit 1
 fi
 
 CMD="$PROTON run $PalServerExe ${ARGS}"
 echo "starting server with: ${CMD}"
-${CMD} || die
+${CMD}
